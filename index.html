@@ -22,7 +22,12 @@
 
         <script>
             const doSearch = () => {
-                document.getElementById("searchbutton").setAttribute("href", "https://www.google.com/search?q=" + document.getElementById("searchbar").value)
+                const searchhref = "https://www.google.com/search?q="
+                const searchbutton = document.getElementById("searchbutton")
+                let searchterm = document.getElementById("searchbar").value
+                if (searchterm === "") searchterm = "Anything"
+
+                searchbutton.setAttribute("href", searchhref + searchterm)
             }
         </script>
 
